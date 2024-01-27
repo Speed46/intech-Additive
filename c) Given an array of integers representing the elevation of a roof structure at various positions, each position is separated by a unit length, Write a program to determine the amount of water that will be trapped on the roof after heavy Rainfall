@@ -42,3 +42,14 @@ Approach:
 2. Initialize Max Arrays:
    We Create `left_max` and `right_max` arrays.
 
+3. Calculate Maximums:
+ we   Iterate both left and right to find maximum elevations.
+
+4. Calculate Trapped Water:
+   Iterate through the elevation array, calculating trapped water at each position.
+
+5. Return Result:
+     Return the total trapped water.
+
+6. Example Usage:
+   Call `trap_water` on an example elevation array and print the result.
