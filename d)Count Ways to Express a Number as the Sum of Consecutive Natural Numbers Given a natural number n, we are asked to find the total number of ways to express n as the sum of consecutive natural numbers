@@ -27,3 +27,4 @@ result = count_ways_to_express(input_number)
 
 print(f"The number of ways to express {input_number} is: {result}")
 
+Source : from web , geeksforgeeks
