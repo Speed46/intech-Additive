@@ -1,0 +1,66 @@
+g)Explain a piece of code that you wrote which you are proud of? If you have not written any code, please write your favorite subject in engineering studies. We can go deep into that subject. 
+
+
+import heapq
+
+class Node:
+    def __init__(self, state, cost, heuristic, parent=None):
+        self.state = state
+        self.cost = cost
+        self.heuristic = heuristic
+        self.parent = parent
+
+    def __lt__(self, other):
+        return (self.cost + self.heuristic) < (other.cost + other.heuristic)
+
+def astar(start, goal, neighbors, heuristic):
+    open_set = [Node(start, 0, heuristic(start))]
+    closed_set = set()
+
+    while open_set:
+        current_node = heapq.heappop(open_set)
+
+        if current_node.state == goal:
+            return [current_node.state] + ([] if current_node.parent is None else astar(start, current_node.parent.state, neighbors, heuristic))
+
+        closed_set.add(current_node.state)
+
+        for neighbor in neighbors(current_node.state):
+            if neighbor in closed_set:
+                continue
+
+            cost_to_neighbor = current_node.cost + 1
+            heuristic_to_goal = heuristic(neighbor)
+            total_cost = cost_to_neighbor + heuristic_to_goal
+
+            neighbor_node = Node(neighbor, cost_to_neighbor, heuristic_to_goal, current_node)
+
+            if neighbor_node not in open_set:
+                heapq.heappush(open_set, neighbor_node)
+
+    return []  # No path found
+
+# Example usage:
+start_node = (0, 0)
+goal_node = (4, 4)
+
+def neighbors(node):
+    x, y = node
+    return [(x+1, y), (x-1, y), (x, y+1), (x, y-1)]
+
+def heuristic(node):
+    return abs(node[0] - goal_node[0]) + abs(node[1] - goal_node[1])
+
+path = astar(start_node, goal_node, neighbors, heuristic)
+print("Shortest path:", path)
+
+Approach: 
+
+1. Initialization:
+   First The A* algorithm initializes an open set using a priority queue and a closed set as empty, starting from the given start node.
+
+2. Exploration and Evaluation:
+  We see  In each iteration, it selects the node with the lowest total cost (cost + heuristic) from the open set,  expands its neighbors, and evaluates their costs and heuristics.
+
+3. Goal Check and Path Reconstruction:
+   If the goal state is reached, the algorithm reconstructs and returns the path from the start to the goal.      Otherwise, it continues until the open set is empty.
