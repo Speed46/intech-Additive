@@ -1,0 +1,26 @@
+h)Random crashes – you are given a source code to test and it randomly crashes and it never crashes in the same place ( you have attached a debugger and you find this). Explain what all you would suspect and how would you go about with isolating the cause. 
+
+
+Causes:
+
+Memory Issues: Check for memory corruption, buffer overflows, or access to freed memory using tools like AddressSanitizer.
+Concurrency Issues: Use ThreadSanitizer to detect race conditions in multithreaded code.
+Resource Leaks: Ensure proper closure of resources like file handles or sockets.
+Exception Handling: Verify that all critical sections have appropriate exception handling.
+Signal Handlers: Investigate unexpected signal handlers that could lead to crashes.
+Compiler and Platform: Ensure compatibility with the chosen compiler and platform.
+External Dependencies: Check for correct usage of external libraries and APIs.
+Logging and Diagnostics: Enhance logging to trace execution flow and capture context before crashes.
+Reproducibility Attempts: Identify patterns or inputs that make the issue reproducible.
+Static Code Analysis: Use tools like Clang Static Analyzer to identify potential issues without running the program.
+Regression Testing: Check recent changes for introduced issues using version control.
+Code Review: Engage in a peer code review for fresh insights.
+
+Debugging approach:
+Start with memory and concurrency checks, then explore other potential causes systematically.
+Utilize various debugging tools and a step-by-step approach to isolate the issue.
+Engage in regression testing to identify commits related to the problem.
+Seek a fresh perspective through code review for overlooked issues.
+
+
+Source : from web , wikipedia
