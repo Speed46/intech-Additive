@@ -1,0 +1,24 @@
+e)Write a piece of code to find the largest 5 digit prime number in the first 100 digits of Pi?
+
+def is_prime(num):
+    if num < 2:
+        return False
+    for i in range(2, int(num**0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+# Get the first 100 digits of Pi (you can replace this with your own method)
+pi_digits = "3141592653589793238462643383279502884197169399375105820974944592307816406286"
+
+largest_prime = 0
+
+# Iterate through the 5-digit substrings of Pi
+for i in range(len(pi_digits) - 4):
+    substring = int(pi_digits[i:i+5])
+    
+    if is_prime(substring) and substring > largest_prime:
+        largest_prime = substring
+
+print("The largest 5-digit prime number in the first 100 digits of Pi is:", largest_prime)
+
