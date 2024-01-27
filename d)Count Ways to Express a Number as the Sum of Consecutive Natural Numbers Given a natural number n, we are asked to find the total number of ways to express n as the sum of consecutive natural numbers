@@ -1,0 +1,29 @@
+d)Count Ways to Express a Number as the Sum of Consecutive Natural Numbers
+Given a natural number n, we are asked to find the total number of ways to express n as the sum of consecutive natural numbers
+
+
+def count_ways_to_express(n):
+    count = 0
+    i = 1
+
+    while i <= n // 2:
+        j = i
+        total = 0
+
+        while total < n:
+            total += j
+            j += 1
+
+        if total == n:
+            count += 1
+
+        i += 1
+
+    return count
+
+# Example usage:
+input_number = 15
+result = count_ways_to_express(input_number)
+
+print(f"The number of ways to express {input_number} is: {result}")
+
