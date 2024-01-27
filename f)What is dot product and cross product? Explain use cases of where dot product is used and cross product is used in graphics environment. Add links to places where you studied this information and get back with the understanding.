@@ -18,3 +18,4 @@ Use Cases in Graphics:
 Normals: Computes surface normals for accurate shading.
 Rotation: Identifies rotation axes for transformations.
 Source : got approach idea from web ,wikipedia, geeksforgeeks.
+https://www.geeksforgeeks.org/dot-and-cross-products-on-vectors/
