@@ -64,3 +64,5 @@ Approach:
 
 3. Goal Check and Path Reconstruction:
    If the goal state is reached, the algorithm reconstructs and returns the path from the start to the goal.      Otherwise, it continues until the open set is empty.
+
+Source : from web , geeksforgeeks
