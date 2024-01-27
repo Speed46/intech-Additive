@@ -1,0 +1,20 @@
+f)What is dot product and cross product? Explain use cases of where dot product is used and cross product is used in graphics environment. Add links to places where you studied this information and get back with the understanding. 
+
+
+
+
+
+Dot Product:
+The dot product, or scalar product, is a mathematical operation between two vectors that results in a scalar.
+Formula:
+A⋅B=∣A∣⋅∣B∣⋅cos(θ)
+Use Cases in Graphics:
+Illumination: Determines light intensity on surfaces.
+Projection: Calculates vector projections for transformations.
+Cross Product:
+ The cross product, or vector product, is a mathematical operation between two vectors that results in a new vector perpendicular to both.
+Formula: A×B=∣A∣⋅∣B∣⋅sin(θ) . ^n
+Use Cases in Graphics:
+Normals: Computes surface normals for accurate shading.
+Rotation: Identifies rotation axes for transformations.
+Source : got approach idea from web ,wikipedia, geeksforgeeks.
